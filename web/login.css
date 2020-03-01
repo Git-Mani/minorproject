@@ -1,0 +1,136 @@
+body{ 
+    background-color: #78cae2;       
+    background-image: url("2.jpg");
+
+}
+.containor{
+	width: 1295px;
+    margin: auto;
+
+}
+  .hadder{
+    width: 100%;
+    margin: auto;
+     //background: #78cae2;
+   // border: groove;
+    height: 55px;
+    padding: 0px 0px 20px 0px;
+  }
+ .left{
+    color: sienna;
+    margin: 0px auto;
+    width: 50%;
+    float: left;
+    font-style: italic;
+  }
+ .left h1{
+    text-align: center;
+ }
+
+ .right{
+    width: 50%;
+    float: right;
+margin: 5px 0px 10px 0px;
+  }
+ .act li{
+         font-size: xx-large;
+    display: inline-block;
+    padding:4px 15px 0px 15px;
+
+ }
+  .act{
+    font-size: x-small;
+    font-variant: all-small-caps;
+  }
+  .act li a{    color: #47471f;
+    text-decoration: blink;
+    box-shadow: 0px 1px 5px 0 chartreuse;
+
+  }
+
+  .act li a:hover{
+    background-color: rgb(227, 158, 211);
+    border-radius: 3px 3px 3px 3px;
+  }
+  .act li input[type=text]{
+   font-size: medium;
+    border-radius: 9px;
+    border: 2px solid;
+  /*   background-image: url(img.jpg); */
+    padding: 9px 2px 1px 10px;
+  }
+.hadder1{
+    margin: auto;
+    width: 100%;
+    /* background-image: url(back.jpg); */
+    font-family: Undercover;
+    text-decoration: blink;
+    
+    text-align: left;
+    font-size: x-large;
+}
+
+.middle{
+	    width: 50%;
+ 
+    text-align: center;
+    margin: auto;
+}
+.set{
+    width: 100%;
+    margin: auto;
+}
+.box{    margin: auto;
+    width: 100%;
+    text-align: center;
+    border: double;
+    background: sandybrown;
+}
+.red{
+	    font-size: x-large;
+		type="radio";
+    margin: 10px 6px 10px 40px;
+}
+.red1{
+	font-size: x-large;
+
+}
+.label{
+	 
+    font-size: x-large;
+    padding-right: 45px;
+}
+.label2{
+
+
+    font-size: x-large;
+ padding-right: 60px;
+   	
+}
+.footer{
+    width: 71%;
+    margin: auto;
+    text-align: center;}
+button
+{
+    font-size: x-large;
+    padding: 0px 17px;
+    font-family: sans-serif;
+    margin: 33px;
+    text-decoration: blink;
+}
+input{
+    font-size: medium;
+    text-decoration: blink;
+    background: whitesmoke;
+    background-color: #ede7e7;
+}
+a{
+	text-decoration: none;
+}
+.form{
+	//padding: 30px;
+	background: #F8F8F8;
+	border-radius: 100px;
+	margin-bottom: 15px;
+}

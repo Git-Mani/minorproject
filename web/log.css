@@ -1,0 +1,25 @@
+.c{
+	background-image: url(12345.jpg);
+        height: 50vh;
+        width: 25vw
+    //width: 100%;
+}
+.containor
+{
+	width: inherit;
+    margin: auto;
+}
+.menu{
+float: left;
+    padding: 0px 73px 2px 0px;
+}
+.reset{
+    width: 70%;
+    float: left;
+	margin-left: 0;
+}
+
+.mid{
+	width: 100%;
+	float: right;
+}
