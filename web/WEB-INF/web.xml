@@ -12,6 +12,10 @@
         <servlet-name>removeuser</servlet-name>
         <servlet-class>removeuser</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>addcriminal</servlet-name>
+        <servlet-class>addcriminal</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>VerifyUser</servlet-name>
         <url-pattern>/VerifyUser</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>removeuser</servlet-name>
         <url-pattern>/removeuser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addcriminal</servlet-name>
+        <url-pattern>/addcriminal</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

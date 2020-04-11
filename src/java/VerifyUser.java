@@ -66,7 +66,7 @@ public class VerifyUser extends HttpServlet {
                     }
                     
                     
-                   response.sendRedirect("buyerpage.jsp");
+                   response.sendRedirect("user.jsp");
                 }else{
                     response.sendRedirect("index.jsp");
                    

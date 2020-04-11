@@ -11,32 +11,19 @@
 <body class="c">
 	<div class="containor">
 			<ul class="reset" role="navigation">
-				<li class="menu">
-					<a href="#">user 
-						<!--<span class="sub-arrow">
-							<i class="fa fa-chevron-down">
-								::before
-							</i>
-						</span>-->
-					</a>
-					<ul class="sub-menu">
-					<li><a href="adduser.jsp">add user</a></li>
-					<li><a href="#">update user</a></li>
-					<li><a href="removeuser.jsp">delete user</a></li>
-					</ul>
-				</li>
+				
 				<li class="menu">
 					<a href="#">criminal 
 						<span class="sub-arrow">
 							<i class="fa fa-chevron-down" >
-								::before
+								
 							</i>
 						</span>
 					</a>
 					<ul class="sub-menu">
-					<li><a href="addcriminal.jsp">add </a></li>
-					<li><a href="#"> update </a></li>
+					<li><a  href="addcriminal.jsp">add </a></li>
 					
+					<li><a href="#">delete </a></li>
 					</ul>
 				</li>
 			</ul>
