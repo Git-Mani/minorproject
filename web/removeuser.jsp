@@ -1,8 +1,3 @@
-<%-- 
-    Document   : removeuser
-    Created on : Mar 1, 2020, 5:04:14 AM
-    Author     : oogeyman
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

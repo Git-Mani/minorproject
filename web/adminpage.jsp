@@ -21,7 +21,7 @@
 					</a>
 					<ul class="sub-menu">
 					<li><a href="adduser.jsp">add user</a></li>
-					<li><a href="#">update user</a></li>
+					<li><a href="updatelist.jsp">update user</a></li>
 					<li><a href="removeuser.jsp">delete user</a></li>
 					</ul>
 				</li>
@@ -29,7 +29,7 @@
 					<a href="#">criminal 
 						<span class="sub-arrow">
 							<i class="fa fa-chevron-down" >
-								::before
+								
 							</i>
 						</span>
 					</a>
@@ -43,10 +43,11 @@
 			
 		</div>
 <div class="search">
-     <form action="criminaldetails.jsp">
+     <form action="criminalSearch.jsp">
         
              <input type="text" placeholder="please enter criminal id" name="code"/>
             <input type="submit" value="Search"/>
      </form>  </div> 
+    <script type="text/javascript"> window.onload = alertName; </script>
 </body>
 </html>
