@@ -1,0 +1,56 @@
+
+  .hadder{
+    width: 100%;
+    margin: auto;
+     //background: #78cae2;
+   // border: groove;
+    height: 55px;
+    padding: 0px 0px 20px 0px;
+  }
+ .left{
+    color: sienna;
+    margin: 0px auto;
+    width: 50%;
+    float: left;
+    font-style: italic;
+  }
+ .left h1{
+    text-align: center;
+ }
+
+ .right{
+    width: 50%;
+    float: right;
+margin: 5px 0px 10px 0px;
+  }
+ .act li{
+         font-size: xx-large;
+    display: inline-block;
+    padding:4px 15px 0px 15px;
+
+ }
+   .act{
+    font-size: x-small;
+    font-variant: all-small-caps;
+  }
+  .act li a{    color: #47471f;
+    text-decoration: blink;
+    box-shadow: 0px 1px 5px 0 chartreuse;
+
+  }
+  .act li a:hover{
+    background-color: rgb(227, 158, 211);
+    border-radius: 3px 3px 3px 3px;
+  }
+  .tab
+  {
+        width: 100%;
+    margin: 20px 0px 0px 0px;
+  }
+.tab table
+{
+  color: cadetblue;
+    align-items: center;
+    font-size: xx-large;
+    margin: auto;
+}

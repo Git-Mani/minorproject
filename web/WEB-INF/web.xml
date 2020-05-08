@@ -16,6 +16,22 @@
         <servlet-name>addcriminal</servlet-name>
         <servlet-class>addcriminal</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Criminalupdateprocess</servlet-name>
+        <servlet-class>Criminalupdateprocess</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ForgotProcess</servlet-name>
+        <servlet-class>ForgotProcess</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ImageProcess</servlet-name>
+        <servlet-class>ImageProcess</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ImageLoader</servlet-name>
+        <servlet-class>ImageLoader</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>VerifyUser</servlet-name>
         <url-pattern>/VerifyUser</url-pattern>
@@ -31,6 +47,22 @@
     <servlet-mapping>
         <servlet-name>addcriminal</servlet-name>
         <url-pattern>/addcriminal</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Criminalupdateprocess</servlet-name>
+        <url-pattern>/Criminalupdateprocess</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ForgotProcess</servlet-name>
+        <url-pattern>/ForgotProcess</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ImageProcess</servlet-name>
+        <url-pattern>/ImageProcess</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ImageLoader</servlet-name>
+        <url-pattern>/ImageLoader</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

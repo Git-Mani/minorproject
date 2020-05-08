@@ -25,13 +25,13 @@ ResultSet resultSet = null;
 <html>
 <body>
 Username <%= session.getAttribute("user")%>
-<h1>Retrieve User Information from Record</h1>
+<h1>Retrieve User information  from database </h1>
 <table border="1">
 <tr>
 <td>uid</td>
 <td>Uname</td>
 <td>password</td>
-<td>update</td>
+<td>Delete</td>
 </tr>
 <%
 try{
@@ -43,10 +43,10 @@ while(resultSet.next()){
 %>
 <tr>
 <td><%=resultSet.getString("uid") %></td>
-<td><%=resultSet.getString("uname") %></td>
+<td ><%=resultSet.getString("uname") %></td>
 <td><%=resultSet.getString("password") %></td>
 
-<td><a href="updateuser.jsp?id=<%=resultSet.getString("uid")%>">update</a></td>
+<td><a href="delete.jsp?id=<%=resultSet.getString("uid")%>">Delete</a></td>
 </tr>
 <%
 }

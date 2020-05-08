@@ -1,0 +1,116 @@
+  .hadder{
+    width: 100%;
+    margin: auto;
+     //background: #78cae2;
+   // border: groove;
+    height: 55px;
+    padding: 0px 0px 20px 0px;
+  }
+ .left{
+    color: sienna;
+    margin: 0px auto;
+    width: 50%;
+    float: left;
+    font-style: italic;
+  }
+ .left h1{
+    text-align: center;
+ }
+
+ .right{
+    width: 50%;
+    float: right;
+margin: 5px 0px 10px 0px;
+  }
+ .act li{
+         font-size: xx-large;
+    display: inline-block;
+    padding:4px 15px 0px 15px;
+
+ }
+   .act{
+    font-size: x-small;
+    font-variant: all-small-caps;
+  }
+  .act li a{    color: #47471f;
+    text-decoration: blink;
+    box-shadow: 0px 1px 5px 0 chartreuse;
+
+  }
+  .act li a:hover{
+    background-color: rgb(227, 158, 211);
+    border-radius: 3px 3px 3px 3px;
+  }
+
+.nav{
+overflow: hidden;
+  background-color: #b8a76b;  
+}
+.navbar {
+overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 4, 2020, 8:04:39 PM
+    Author     : oogeyman
+*/
+

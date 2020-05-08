@@ -21,7 +21,6 @@
     String s5=rs.getString(5);
     String s6=rs.getString(6);
     String s7=rs.getString(7);
-    String s8=rs.getString(8);
     
   
 
@@ -34,12 +33,11 @@
         <pre>
             cid         <%=s1%>
             cName       <%=s2%>
-            cage        <%=s3%>
-            cdob        <%=s4%>
-            cadhaar     <%=s5%>
-            ccrime      <%=s6%>
-            rating      <%=s7%>
-            crime date  <%=s8%>
+            cdob        <%=s3%>
+            cadhaar     <%=s4%>
+            ccrime      <%=s5%>
+            rating      <%=s6%>
+            crime date  <%=s7%>
 
                     
         </pre>

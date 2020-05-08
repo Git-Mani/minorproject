@@ -28,58 +28,41 @@ while(resultSet.next()){
 %>
 <!DOCTYPE html>
 <html>
-<head>
-	<title> Update User</title>
-	<link rel="stylesheet" type="text/css" href="changepassword.css">
-	<link rel="shortcut icon" href="exam.jpg">
-</head>
-    
 <body>
-     Username <%= session.getAttribute("user")%>
+    <script language="javascript">
+function deleteRecord(uid){
+    var doIt=confirm('Do you want to delete the record?');
+  if(doIt){
+   var f=document.form;
+    f.method="get";
+    f.action='/delete-process.jsp?uid='+uid;
+    f.submit();
+    }
+  else{
 
-<div id="1" >
-	<div class="hadder">
-  	  <div class="left"><h1> Update User Data From Record</h1> </div> 
-  	  <div class="right">
-  	  	  <ul class="act">
-  	  	     <li ><a href="index.html">Home</a></li>
-  	  	     <span></span>
-  	  	     <li><a href="logout.jsp">Logout</a></li>
-  	  	  
-          </ul>
-  	  </div>
-  	  
-  	</div>
-  	<hr>
-  
-  <div class="footer">
-      <form style=";" method="post" action="update-process.jsp">
-          <table>
-              <tr>
-                  
-                
+    }
+}
+</script>
+
+ Username <%= session.getAttribute("user")%>
+<h1>delete  user data record from Database </h1>
+<form method="post" action="delete-process.jsp">
+ <table>   
 <input type="hidden" name="uid" value="<%=resultSet.getString("uid") %>">
+
 <tr>
-<td>
-uid:</td><td>
-<input type="text" name="uid" value="<%=resultSet.getString("uid") %>">
-</td>
+<td>uid:</td><td>
+    <input type="text" name="uid" value="<%=resultSet.getString("uid") %>"></td>
 </tr>
 <tr>
 <td>uname:</td><td>
 <input type="text" name="uname" value="<%=resultSet.getString("uname") %>">
-<td></tr>
-<tr><td>
-password:</td><td>
-<input type="password" name="password" value="<%=resultSet.getString("password") %>">
 </td></tr>
-<tr><td >
-<input  type="submit" value="submit"></td></tr>  
-                  
-              </tr>
-
+<tr><td>password:</td><td>
+<input type="password" name="password" value="<%=resultSet.getString("password") %>">
+</td><tr>
+    <td><input type="submit" value="delete" onclick="deleteRecord(<%=resultSet.getString("uid")%>);"></td>
 </table>
-  </div>
 </form>
 <%
 }

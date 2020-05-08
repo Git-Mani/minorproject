@@ -13,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 public class addcriminal extends HttpServlet {
@@ -25,7 +26,7 @@ public class addcriminal extends HttpServlet {
     public void init(){
         try{
             con=Data.connect();
-            String sql="insert into criminal values(?,?,?,?,?,?,?,?)";
+            String sql="insert into criminal values(?,?,?,?,?,?,?)";
             ps=con.prepareStatement(sql);        
         }catch(Exception e){
             e.printStackTrace();
@@ -48,35 +49,35 @@ public class addcriminal extends HttpServlet {
         //reads the request
         String s1=request.getParameter("cid");
         String s2=request.getParameter("cname");
-        String s3=request.getParameter("cage");
+        
         //java.util.Date date=new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("cdob"));
-        String s4=request.getParameter("cdob");     
+        String s3=request.getParameter("cdob");     
  // date=request.getParameter("cdate");
 //java.sql.Date s4=new java.sql.Date(date.getTime());
-        String s5=request.getParameter("cadhaar");
-        String s6=request.getParameter("ccrime");
-      int s7=0;
-       switch(s6){  
+        String s4=request.getParameter("cadhaar");
+        String s5=request.getParameter("ccrime");
+      int s6=0;
+       switch(s5){  
         case "murder":  
-            s7=5;  
+            s6=5;  
             break;  
         case "kidnap":  
-            s7=4; 
+            s6=4; 
             break;  
         case "theft":  
-            s7=3;
+            s6=3;
             break;
         case "other":  
-            s7=2;
+            s6=2;
             break;
         default :
-                s7=1;
+                s6=1;
                 break;
         }  
         
         
         
-         String s8=request.getParameter("cdate");
+         String s7=request.getParameter("cdate");
          java.text.DateFormat format = new java.text.SimpleDateFormat("MM/dd/yyyy");
         
      
@@ -86,16 +87,23 @@ public class addcriminal extends HttpServlet {
             
             ps.setString(1, s1);
             ps.setString(2, s2);
-            ps.setString(3, s3);
+          
             //java.sql.Date da= new java.sql.Date(da.getTime());
-            ps.setString(4,  s4);
+            ps.setString(3,  s3);
+            ps.setString(4, s4);
             ps.setString(5, s5);
-            ps.setString(6, s6);
-            ps.setInt(7,s7);
-            ps.setString(8,  s8);
+            ps.setInt(6,s6);
+            ps.setString(7,  s7);
             
             ps.executeUpdate();
             out.println("REGISTRATION COMPLETED");
+            
+            HttpSession session = request.getSession();
+            
+            session.getAttribute("user");
+            
+            response.sendRedirect("successaddcriminal.jsp");
+            
         }catch(Exception e){
             out.println(e);
         }

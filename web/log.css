@@ -1,9 +1,4 @@
-.c{
-	background-image: url(12345.jpg);
-        height: 50vh;
-        width: 25vw
-    //width: 100%;
-}
+
 .containor
 {
 	width: inherit;

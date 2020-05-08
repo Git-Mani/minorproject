@@ -19,17 +19,47 @@ public class VerifyUser extends HttpServlet {
         String uname=request.getParameter("uname");
         String password=request.getParameter("password");
         String utype=request.getParameter("utype");
-        
+        String name="adminpage";
         if(utype.equals("admin")){
             if(uname.equals("admin@gmail.com") && password.equals("indore")){
-                
+                 
+               
+    
+        //success!
+        //save the user data in session scope
+        HttpSession session = request.getSession();
+       
+        
+        session.setAttribute("user", uname);
+        Cookie username1=new Cookie("utype",utype);
+        username1.setMaxAge(60*60*24*7);
+        response.addCookie(username1);
+         String ch=request.getParameter("c1");
+        //do your forward or redirect...
+      if(ch!=null){
+                        //step-1 (create cookie object)
+                        Cookie c1=new Cookie("id",uname);
+                        Cookie c2=new Cookie("pw",password);
+                        //step-2 (set the maximum age)
+                        c1.setMaxAge(60*60*24*7);
+                        c2.setMaxAge(60*60*24*7);
+                        //step-3 (add cookie to response)
+                        response.addCookie(c1);
+                        response.addCookie(c2);
+                    }else if(ch==null){
+                    
+                    Cookie c1= new Cookie ("id",null);
+                    Cookie c2= new Cookie ("pw",null);
+                        response.addCookie(c1);
+                        response.addCookie(c2);
+                    }
                
               response.sendRedirect("adminpage.jsp");
             }else{
                 response.sendRedirect("index.jsp");
                 out.println("Invalid Admin Credentials");
             }
-        }else if(utype.equals("buyer")){
+        }else if(utype.equals("user")){
             
             String sql="SELECT * FROM user where uname=? AND password=?";     
             try{
@@ -110,6 +140,8 @@ public class VerifyUser extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+  
+    
     }
 
     /**

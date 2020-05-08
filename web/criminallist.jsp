@@ -24,29 +24,37 @@ ResultSet resultSet = null;
 %>
 <html>
 <body>
-Username <%= session.getAttribute("user")%>
-<h1>Retrieve User Information from Record</h1>
+ Username <%= session.getAttribute("user")%>
+<h1>Retrieve Criminal information from database</h1>
 <table border="1">
 <tr>
-<td>uid</td>
-<td>Uname</td>
-<td>password</td>
+<td>criminal id</td>
+<td>criminal name</td>
+<td>criminal dob</td>
+<td>criminal adhaar</td>
+<td>crime</td>
+<td>rating</td>
+<td>date</td>
 <td>update</td>
 </tr>
 <%
 try{
 connection = DriverManager.getConnection(connectionUrl+database, userid, password);
 statement=connection.createStatement();
-String sql ="select * from user";
+String sql ="select * from criminal";
 resultSet = statement.executeQuery(sql);
-while(resultSet.next()){
-%>
+while(resultSet.next())
+{%>
 <tr>
-<td><%=resultSet.getString("uid") %></td>
-<td><%=resultSet.getString("uname") %></td>
-<td><%=resultSet.getString("password") %></td>
+<td><%=resultSet.getString("cid") %></td>
+<td><%=resultSet.getString("cname") %></td>
+<td><%=resultSet.getString("cdob") %></td>
+<td><%=resultSet.getString("cadhaar") %></td>
+<td><%=resultSet.getString("ccrime") %></td>
+<td><%=resultSet.getString("rating") %></td>
+<td><%=resultSet.getString("cdate") %></td>
 
-<td><a href="updateuser.jsp?id=<%=resultSet.getString("uid")%>">update</a></td>
+<td><a href="criminalupdate.jsp?id=<%=resultSet.getString("cid")%>">update</a></td>
 </tr>
 <%
 }

@@ -1,67 +1,64 @@
 
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
-public class adduser extends HttpServlet {
+public class ForgotProcess extends HttpServlet {
 
-     
-        
-    private Connection con;
-    private PreparedStatement ps;
-    
-    public void init(){
-        try{
-            con=Data.connect();
-            String sql="insert into user values(?,?,?)";
-            ps=con.prepareStatement(sql);        
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-    }
-    public void destroy(){
-        try{
-            con.close();
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-    }
-    
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+       
+try
+{
+Class.forName("com.mysql.jdbc.Driver");
+Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/criminalrecord","root","root");
+Statement st=con.createStatement();
+String uid=request.getParameter("uid");
+String uname=request.getParameter("uname");
+String sql = "SELECT password FROM user where uid='"+uid+"'"+ " AND uname='"+uname+"'"; 
+ResultSet rs = st.executeQuery(sql);
+if(rs.next()){
+String Countrow= "";
+Countrow=rs.getString(1);
+
+out.println(Countrow);
+if(Countrow.isEmpty()){
+}
+if(!Countrow.isEmpty() ){
+HttpSession session = request.getSession();
         
-        PrintWriter out=response.getWriter();
         
-        //reads the request
-        String s1=request.getParameter("uid");
-        String s2=request.getParameter("uname");
-        String s3=request.getParameter("password");
-        //process the request
-        try{
-            
-            ps.setString(1, s1);
-            ps.setString(2, s2);
-            ps.setString(3, s3);
-            
-            ps.executeUpdate();
-            out.println("REGISTRATION COMPLETED");
-            
-            response.sendRedirect("successadduser.jsp");
-        }catch(Exception e){
-            out.println(e);
-        }
-      
-    
         
-    
+        session.setAttribute("user", uname);
+    response.sendRedirect("changepassword.jsp");
+
+}}
+else{
+out.println("Invalid credentials !");
+}
+}
+catch (Exception e){
+e.printStackTrace();
+}
+        
+        
+        
+        
+        
+           
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

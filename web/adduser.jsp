@@ -1,65 +1,56 @@
-<%-- 
-    Document   : adduser
-    Created on : Mar 1, 2020, 4:02:10 AM
-    Author     : oogeyman
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Add USer</title>
+   
+<head>
+        
+	<title> AddUser</title>
+	<link rel="stylesheet" type="text/css" href="user2.css">
+	<link rel="shortcut icon" href="exam.jpg">
+</head>
+
+<body>
   
-     <script type="text/javascript"> 
-  function validateForm() {
-  var x = document.getElementById("uid").value;
- 
-  if(a.value.length<=0 )
-                    {
-                        alert("Don't leave the field empty!");
-                        valid = false;
-                    }
-                    else{
-                        if(!IsNumeric(a.value) )
-                            alert("Enter a number");
-                    valid = false;
-                }
-}
-    </script>
-  
-  
-        
-    </head>
-    <body>
-        <form  name="myForm" action="adduser" onsubmit="return validateForm()" >
-        <table>
-                    <tr><td>
-                            userid</td><td> <input type="text" name="uid" required  >
-                     </td>
-                    </tr>
-                  <tr>
-                      <td>username </td><td>  <input type="text" name="uname" required > </td>
-                    
-                    </tr>
-                          <tr><td>
-                                  password</td><td> <input type="password" name="password" required >
-                     </td>
-                    </tr>
-                        <tr><td>
-                            <input type="submit" value="submit" >
-                     </td>
-                    </tr> 
+<div id="1" >
+    
+     <div class="hadder">
+         <div class="left"><h2>Add User</h2> </div> 
+  	  <div class="right">
+  	  	  <ul class="act">
+  	  	     <li ><a href="index.jsp">Home</a></li>
+  	  	     <span></span>
+  	  	     <li><a href="logout.jsp">Logout</a></li>
+  	  	 
+          </ul>
+  	  </div>
+  	  
+  	</div>
+  	<hr>
+  	<div class="tab"> 
+            <form action="adduser">
+  	  <table >
+   
+   <tr>
+                <tr>
+                    <td>UserId</td><td>  <input  type="number" name="uid" required value="" required/> </td>
+                </tr>
+
+                <tr>
+                    <td>UserName</td><td>  <input  type="text" name="uname" required value=""   /> </td>
+                </tr>
+                           <tr>
+                               <td>Password</td><td><input type="password" name="password" required value="" required/></td>
+                            </tr>
             
             
+                <td style="text-align: center;"> <input type="submit" value="submit" ></td>
+            </tr>
+            </table>
+            </form>
             
-            
-        </table>
-        
-        
-        
-    </form>
-        
-        
-    </body>
+  	</div>
+  	
+
+		
+</div>
+</body>
 </html>

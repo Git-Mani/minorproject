@@ -1,67 +1,54 @@
 
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import javax.servlet.ServletException;
+import java.sql.ResultSet;
+//import javax.servlet.Servlet;
+import javax.servlet.*;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-public class adduser extends HttpServlet {
+public class ImageLoader extends HttpServlet {
 
-     
-        
-    private Connection con;
-    private PreparedStatement ps;
-    
-    public void init(){
-        try{
-            con=Data.connect();
-            String sql="insert into user values(?,?,?)";
-            ps=con.prepareStatement(sql);        
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-    }
-    public void destroy(){
-        try{
-            con.close();
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-    }
-    
-    
+  
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+         BufferedInputStream bin=null;
+    BufferedOutputStream bout=null;
+    InputStream in =null;
+      try{
+       
+       String sql="select image  from creminal2 where cid='12345'";
+       Connection con=Data.connect(); 
+       PreparedStatement ps=con.prepareStatement(sql);
+       ResultSet rs=ps.executeQuery();
+       rs.next();
+       byte b[]=rs.getBytes(1);
+       ServletOutputStream out1=response.getOutputStream();
+       out1.write(b);
+       out1.close();
+       con.close();
+       }catch(Exception e){
+       
+     e.printStackTrace();
+       
+       }  
+       
         
-        PrintWriter out=response.getWriter();
         
-        //reads the request
-        String s1=request.getParameter("uid");
-        String s2=request.getParameter("uname");
-        String s3=request.getParameter("password");
-        //process the request
-        try{
-            
-            ps.setString(1, s1);
-            ps.setString(2, s2);
-            ps.setString(3, s3);
-            
-            ps.executeUpdate();
-            out.println("REGISTRATION COMPLETED");
-            
-            response.sendRedirect("successadduser.jsp");
-        }catch(Exception e){
-            out.println(e);
-        }
-      
-    
         
-    
+        
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -8,27 +8,25 @@
         <title>Add Criminal</title>
     </head>
     <body>
+         Username <%= session.getAttribute("user")%>
         <h1>Criminal Detail</h1>
          <form action="addcriminal">
         <table>
                     <tr><td>
-                            criminalid</td><td> <input type="text" name="cid" required>
+                            criminalid</td><td> <input type="number" placeholder="enter only number" name="cid" required>
                      </td>
                     </tr>
                   <tr>
                       <td>Criminal name </td><td>  <input type="text" name="cname" required > </td>
                     
                     </tr>
-                    <tr><td>
-                            Criminal Age</td><td> <input type="text" name="cage"required>
-                     </td>
-                    </tr>
+                    
 <tr><td>
                                crminal dob </td><td> <input type="date" name="cdob" required>
                      </td>
                     </tr> 
                     <tr><td>
-                            Criminal Adhaar No</td><td> <input type="text" name="cadhaar" required >
+                            Criminal Adhaar No</td><td> <input type="text"  placeholder="enter only number"  name="cadhaar" pattern="[0-9]{12}" title="enter 12 number"   required >
                      </td>
                     </tr>
                     
